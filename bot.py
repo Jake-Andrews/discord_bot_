@@ -20,13 +20,6 @@ from dotenv import load_dotenv
 #Consider something for docker
 #Mess around with adding support for twitter/reddit
 
-#Problem: A user can edit messages multiple times. 
-# The current database only stores the most recent edited message.
-#Fix: Insert into the database instead of updating. Then when 
-#Finding the edited message, query all message id's with the edited boolean (1)
-
-
-
 load_dotenv()
 bot = commands.Bot(command_prefix='.')
 cg = CoinGeckoAPI()
@@ -53,4 +46,3 @@ try:
 
 except Exception as e: 
     print(f"Error {e} when trying to log in")
-

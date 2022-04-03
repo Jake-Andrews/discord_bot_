@@ -3,7 +3,7 @@ from discord.ext import commands
 from pycoingecko import CoinGeckoAPI
 from discord.commands import slash_command
 from discord.commands import Option
-import sys
+
 class Crypto(commands.Cog):
 
     def __init__(self, bot):

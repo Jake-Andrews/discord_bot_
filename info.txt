@@ -1,2 +1,0 @@
-PIP8
-directory names, no underscores, file names can have underscored, but discouraged. both should be all lower_case
