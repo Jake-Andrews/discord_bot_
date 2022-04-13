@@ -1,6 +1,5 @@
 from queue import Empty
 import sqlite3
-import database
 import discord
 
 class DatabaseHelper():

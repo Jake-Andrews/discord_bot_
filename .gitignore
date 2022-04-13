@@ -116,5 +116,6 @@ dmypy.json
 # Generic database
 *.db
 
-#.txt
+#.txt and json
 *.txt
+*.json
