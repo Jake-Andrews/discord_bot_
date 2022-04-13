@@ -119,4 +119,4 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[bot-screenshot]: images/basic_usage.png
+[bot-screenshot]: images/basic_usage.PNG?raw=true
