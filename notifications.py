@@ -1,3 +1,4 @@
+'''
 import requests
 import os 
 import json
@@ -19,7 +20,7 @@ class Crypto(commands.Cog):
         TWITCH_STREAM_API_ENDPOINT_V5 = "https://api.twitch.tv/kraken/streams/{}"
         API_HEADERS = {
             'Client-ID': self.client_id,
-            'Authorization' : 'Bearer '+token,
+            'Authorization' : 'Bearer '+ token,
         }
     
     def check_user_live(self, username):
@@ -75,3 +76,4 @@ class Crypto(commands.Cog):
 
 def setup(bot):
     bot.add_cog(Crypto(bot))
+'''

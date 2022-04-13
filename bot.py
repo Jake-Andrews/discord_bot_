@@ -20,10 +20,12 @@ from dotenv import load_dotenv
 #Consider something for docker
 #Mess around with adding support for twitter/reddit
 
-load_dotenv()
-bot = commands.Bot(command_prefix='.')
-cg = CoinGeckoAPI()
+BASEDIR = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(BASEDIR, '.env'))
 DISCORD_TOKEN = os.environ['DISCORD_TOKEN']
+intents = discord.Intents.all()
+bot = commands.Bot(intents=intents)
+cg = CoinGeckoAPI()
 
 @bot.event
 async def on_ready():
@@ -42,6 +44,7 @@ for cog in cogs_list:
         print(f"Error loading cog file: {e}")
 
 try:   
+    
     bot.run(DISCORD_TOKEN)
 
 except Exception as e: 
