@@ -1,4 +1,3 @@
-from queue import Empty
 import sqlite3
 import discord
 
@@ -8,7 +7,7 @@ class DatabaseHelper():
         self.dbCursor = self.dbCon.cursor()
 
     def query_deleted_messages(self, guild_id, user_id):
-        sql = f"SELECT msg FROM (_{guild_id}) WHERE user_id = {user_id} AND deleted_or_not = {1}"
+        sql = f"SELECT msg, message_id, published_time, deleted_or_not FROM (_{guild_id}) WHERE user_id = {user_id} AND deleted_or_not = {1}"
 
         try:
             self.dbCursor.execute(sql)
@@ -36,6 +35,7 @@ class DatabaseHelper():
         
 
     def query_edited_messages(self, guild_id, msg_id):
+        #SELECT msg, message_id, edited_or_not, edited_time, published_time, deleted_or_not
         sql = f"SELECT msg FROM (_{guild_id}) WHERE message_id = {msg_id}"
 
         try:
@@ -58,7 +58,7 @@ class DatabaseHelper():
         else: return result
 
     def query_users_history(self, guild_id, users_id):
-        sql = f"SELECT msg FROM (_{guild_id}) WHERE user_id = {users_id}"
+        sql = f"SELECT msg, message_id, edited_or_not, edited_time, published_time, deleted_or_not FROM (_{guild_id}) WHERE user_id = {users_id}"
 
         try: 
             self.dbCursor.execute(sql)

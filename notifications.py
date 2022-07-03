@@ -1,3 +1,4 @@
+#twitch changd their api, broken
 '''
 import requests
 import os 
@@ -8,7 +9,7 @@ from twitchAPI.twitch import Twitch
 from discord.utils import get
 
 
-class Crypto(commands.Cog):
+class Twitch(commands.Cog):
 
     def __init__(self, bot):
         load_dotenv()
@@ -75,5 +76,5 @@ class Crypto(commands.Cog):
         await self.bot.wait_until_ready()
 
 def setup(bot):
-    bot.add_cog(Crypto(bot))
+    bot.add_cog(Twitch(bot))
 '''
